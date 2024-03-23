@@ -14,7 +14,7 @@ setup(
     keywords="SAFER safer department transportation fitness electronic records system",
     author="Arthur Tyukayev",
     author_email="arthurtyukayev@gmail.com",
-    install_requires=["lxml", "requests", "python-dateutil"],
+    install_requires=["lxml", "requests"],
     license="MIT",
     long_description=long_description,
     long_description_content_type="text/markdown",

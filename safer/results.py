@@ -1,8 +1,6 @@
 import re
-from datetime import datetime
 from json import dumps
 from webbrowser import open as open_browser
-from dateutil import parser
 from safer.api import api_call_get_usdot
 from safer.crawler import parse_html_to_tree
 from safer.html import process_company_snapshot
@@ -45,33 +43,12 @@ class Company:
         self.__canada_inspections = data["canada_inspections"]
         self.__canada_crashes = data["canada_crashes"]
         self.__cargo_carried = data["cargo_carried"]
+        self.__latest_update = data["latest_update"]
+        self.__safety_rating_date = data["safety_rating_date"]
+        self.__safety_review_date = data["safety_review_date"]
+        self.__mcs_150_form_date = data["mcs_150_form_date"]
+        self.__out_of_service_date = data["out_of_service_date"]
 
-        # Parsing date strings as datetime objects
-        self.__latest_update = (
-            datetime.strptime(data["latest_update"], "%m/%d/%Y")
-            if data["latest_update"]
-            else None
-        )
-        self.__safety_rating_date = (
-            datetime.strptime(data["safety_review_date"], "%m/%d/%Y")
-            if data["safety_review_date"]
-            else None
-        )
-        self.__safety_review_date = (
-            parser.parse(data["safety_review_date"])
-            if data["safety_review_date"]
-            else None
-        )
-        self.__mcs_150_form_date = (
-            parser.parse(data["mcs_150_form_date"])
-            if data["mcs_150_form_date"]
-            else None
-        )
-        self.__out_of_service_date = (
-            parser.parse(data["out_of_service_date"])
-            if data["out_of_service_date"]
-            else None
-        )
 
         # Keeping the raw dictionary for dumping to JSON if needed.
         self.__raw = data
