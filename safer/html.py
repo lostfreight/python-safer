@@ -226,20 +226,20 @@ def process_company_snapshot(tree):
     crashes_tables = tree.xpath('//table[@summary="Crashes"]')
 
     fields = {
-        "entity_type": "tr[2]/td/text()",
-        "legal_name": "tr[4]/td/text()",
-        "dba_name": "tr[5]/td/text()",
-        "physical_address": "tr[6]/td/text()",
-        "phone": "tr[7]/td/text()",
-        "mailing_address": "tr[8]/td/text()",
-        "usdot": "tr[9]/td[1]/text()",
-        "state_carrier_id": "tr[9]/td[2]/text()",
-        "mc_mx_ff_numbers": "tr[10]/td[1]/a/text()",
-        "duns_number": "tr[10]/td[2]/text()",
-        "power_units": "tr[11]/td[1]/text()",
-        "drivers": "tr[11]/td[2]/font/b/text()",
-        "mcs_150_form_date": "tr[12]/td[1]/text()",
-        "mcs_150_mileage_year": "tr[12]/td[2]/font/b/text()",
+        "entity_type": "tr[3]/td/text()",
+        "legal_name": "tr[11]/td/text()",
+        "dba_name": "tr[12]/td/text()",
+        "physical_address": "tr[13]/td/text()",
+        "phone": "tr[14]/td/text()",
+        "mailing_address": "tr[15]/td/text()",
+        "usdot": "tr[5]/td[1]/text()",
+        "state_carrier_id": "tr[5]/td[2]/text()",
+        "mc_mx_ff_numbers": "tr[9]/td[1]/a/text()",
+        "duns_number": "tr[16]/td[2]/text()",
+        "power_units": "tr[17]/td[1]/text()",
+        "drivers": "tr[17]/td[2]/font/b/text()",
+        "mcs_150_form_date": "tr[6]/td[1]/text()",
+        "mcs_150_mileage_year": "tr[6]/td[2]/font/b/text()",
     }
 
     for item in fields:
